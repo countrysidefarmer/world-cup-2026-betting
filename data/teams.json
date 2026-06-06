@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-06T11:20:15Z",
+  "last_updated": "2026-06-06T11:21:54Z",
   "tournament_state": "pre_tournament",
   "polymarket_teams": 48,
   "teams": [
@@ -349,8 +349,8 @@
       "flag": "🇲🇽",
       "group": "A",
       "data_quality": "full",
-      "ev_total": 31.08,
-      "ev_group": 13.8,
+      "ev_total": 31.07,
+      "ev_group": 13.79,
       "ev_tournament": 16.97,
       "ev_entertainment": 0.31,
       "probs": {
@@ -359,8 +359,8 @@
         "p_sf": 0.13,
         "p_qf": 0.265,
         "p_r16": 0.525,
-        "p_advance": 0.9273,
-        "p_win_group": 0.5292
+        "p_advance": 0.9271,
+        "p_win_group": 0.529
       },
       "breakdown": {
         "p_1st": 0.0125,
@@ -369,12 +369,12 @@
         "p_4th": 0.0525,
         "p_qf_exit": 0.135,
         "p_r16_exit": 0.26,
-        "p_r32_exit": 0.4023,
-        "p_group_exit": 0.0727,
-        "p_grp_1st": 0.5292,
+        "p_r32_exit": 0.4021,
+        "p_group_exit": 0.0729,
+        "p_grp_1st": 0.529,
         "p_grp_2nd": 0.3074,
-        "p_grp_3rd": 0.136,
-        "p_grp_4th": 0.0274
+        "p_grp_3rd": 0.1361,
+        "p_grp_4th": 0.0276
       }
     },
     {
@@ -757,7 +757,7 @@
       "flag": "🇰🇷",
       "group": "A",
       "data_quality": "full",
-      "ev_total": 17.91,
+      "ev_total": 17.9,
       "ev_group": 8.28,
       "ev_tournament": 9.31,
       "ev_entertainment": 0.31,
@@ -767,8 +767,8 @@
         "p_sf": 0.039,
         "p_qf": 0.105,
         "p_r16": 0.305,
-        "p_advance": 0.7523,
-        "p_win_group": 0.2218
+        "p_advance": 0.7517,
+        "p_win_group": 0.2217
       },
       "breakdown": {
         "p_1st": 0.0025,
@@ -777,12 +777,12 @@
         "p_4th": 0.017,
         "p_qf_exit": 0.066,
         "p_r16_exit": 0.2,
-        "p_r32_exit": 0.4473,
-        "p_group_exit": 0.2477,
-        "p_grp_1st": 0.2218,
-        "p_grp_2nd": 0.3149,
-        "p_grp_3rd": 0.3234,
-        "p_grp_4th": 0.1398
+        "p_r32_exit": 0.4467,
+        "p_group_exit": 0.2483,
+        "p_grp_1st": 0.2217,
+        "p_grp_2nd": 0.3146,
+        "p_grp_3rd": 0.3231,
+        "p_grp_4th": 0.1407
       }
     },
     {
@@ -961,18 +961,18 @@
       "flag": "🇨🇿",
       "group": "A",
       "data_quality": "partial",
-      "ev_total": 15.25,
+      "ev_total": 15.24,
       "ev_group": 7.39,
-      "ev_tournament": 7.54,
+      "ev_tournament": 7.53,
       "ev_entertainment": 0.31,
       "probs": {
         "p_win": 0.0025,
         "p_final": 0.005,
         "p_sf": 0.024,
         "p_qf": 0.0734,
-        "p_r16": 0.2266,
-        "p_advance": 0.6993,
-        "p_win_group": 0.1865
+        "p_r16": 0.2264,
+        "p_advance": 0.6985,
+        "p_win_group": 0.1864
       },
       "breakdown": {
         "p_1st": 0.0025,
@@ -980,13 +980,13 @@
         "p_3rd": 0.0095,
         "p_4th": 0.0095,
         "p_qf_exit": 0.0494,
-        "p_r16_exit": 0.1532,
-        "p_r32_exit": 0.4727,
-        "p_group_exit": 0.3007,
-        "p_grp_1st": 0.1865,
-        "p_grp_2nd": 0.2752,
-        "p_grp_3rd": 0.3564,
-        "p_grp_4th": 0.1819
+        "p_r16_exit": 0.153,
+        "p_r32_exit": 0.4721,
+        "p_group_exit": 0.3015,
+        "p_grp_1st": 0.1864,
+        "p_grp_2nd": 0.2749,
+        "p_grp_3rd": 0.3558,
+        "p_grp_4th": 0.1829
       }
     },
     {
@@ -1199,9 +1199,9 @@
       "flag": "🇿🇦",
       "group": "A",
       "data_quality": "full",
-      "ev_total": 9.69,
+      "ev_total": 9.7,
       "ev_group": 5.53,
-      "ev_tournament": 3.85,
+      "ev_tournament": 3.86,
       "ev_entertainment": 0.31,
       "probs": {
         "p_win": 0.0005,
@@ -1209,8 +1209,8 @@
         "p_sf": 0.0215,
         "p_qf": 0.0385,
         "p_r16": 0.12,
-        "p_advance": 0.2877,
-        "p_win_group": 0.0625
+        "p_advance": 0.2894,
+        "p_win_group": 0.063
       },
       "breakdown": {
         "p_1st": 0.0005,
@@ -1219,12 +1219,12 @@
         "p_4th": 0.0102,
         "p_qf_exit": 0.017,
         "p_r16_exit": 0.0815,
-        "p_r32_exit": 0.1677,
-        "p_group_exit": 0.7123,
-        "p_grp_1st": 0.0625,
-        "p_grp_2nd": 0.1024,
-        "p_grp_3rd": 0.1842,
-        "p_grp_4th": 0.6509
+        "p_r32_exit": 0.1694,
+        "p_group_exit": 0.7106,
+        "p_grp_1st": 0.063,
+        "p_grp_2nd": 0.1031,
+        "p_grp_3rd": 0.1851,
+        "p_grp_4th": 0.6489
       }
     },
     {
