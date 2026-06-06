@@ -357,9 +357,11 @@ def derive_probs(
         p_grp_4th  = max(0.0, 1.0 - p_advance) * (12.0 / 16.0)
 
     # ── Knockout stage ────────────────────────────────────────────────────────
-    p_sf    = p_sf_direct if p_sf_direct is not None else min(p_win * 4.0, 0.88)
-    p_qf    = p_qf_direct if p_qf_direct is not None else min(p_win * 8.0, 0.92)
+    # Fallbacks use the next known stage × 0.5 so they never exceed it,
+    # avoiding the monotonicity clamp making adjacent stages identical.
     p_r16   = p_r16_direct if p_r16_direct is not None else min(p_advance * 0.5, 0.95)
+    p_qf    = p_qf_direct  if p_qf_direct  is not None else p_r16 * 0.5
+    p_sf    = p_sf_direct  if p_sf_direct  is not None else p_qf  * 0.5
     p_final = min(p_win * 2.0, 0.82)
 
     # ── Monotonicity (top-down) ───────────────────────────────────────────────
