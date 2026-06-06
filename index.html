@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WC 2026 Betting — Team Values</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">
+    <span class="trophy">🏆</span>
+    WC 2026 Betting
+  </a>
+  <div class="nav-meta">
+    <div>Powered by <a href="https://polymarket.com" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;">Polymarket</a></div>
+    <div>Updated: <span class="updated" id="nav-updated">—</span></div>
+  </div>
+</nav>
+
+<div class="stale-banner" id="stale-banner">
+  ⚠ Data is more than 48 hours old — values may be outdated
+</div>
+
+<section class="hero">
+  <h1>World Cup 2026 — Team Expected Values</h1>
+  <p>
+    Expected points per team based on live Polymarket probabilities and the group betting scoring system.
+    Higher EV = better expected return. Updated nightly.
+  </p>
+</section>
+
+<section class="cards" id="cards">
+  <div class="card">
+    <div class="card-label">Top EV Team</div>
+    <div class="card-value" id="card-top-ev-val">—</div>
+    <div class="card-sub" id="card-top-ev-name">Loading…</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Most Likely Winner</div>
+    <div class="card-value" id="card-fav-name">—</div>
+    <div class="card-sub" id="card-fav-pct">—</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Best Dark Horse</div>
+    <div class="card-value" id="card-dark-name">—</div>
+    <div class="card-sub" id="card-dark-sub">Highest EV / Win %</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Polymarket Coverage</div>
+    <div class="card-value" id="card-coverage">—</div>
+    <div class="card-sub">teams with live odds</div>
+  </div>
+</section>
+
+<section class="scoring-wrap">
+  <button class="scoring-toggle" id="scoring-toggle" onclick="toggleScoring()">
+    <span class="arrow">›</span> Scoring rules
+  </button>
+  <div class="scoring-body" id="scoring-body">
+    <div class="scoring-section">
+      <h4>Group Ranking</h4>
+      <div class="score-row"><span>1st in group</span><span>+20 pts</span></div>
+      <div class="score-row"><span>2nd in group</span><span>+10 pts</span></div>
+      <div class="score-row"><span>3rd in group</span><span>0 pts</span></div>
+      <div class="score-row"><span>4th in group</span><span>+5 pts</span></div>
+    </div>
+    <div class="scoring-section">
+      <h4>Tournament Ranking</h4>
+      <div class="score-row"><span>Champion (1st)</span><span>+90 pts</span></div>
+      <div class="score-row"><span>Runner-up (2nd)</span><span>+70 pts</span></div>
+      <div class="score-row"><span>3rd place</span><span>+55 pts</span></div>
+      <div class="score-row"><span>4th place</span><span>+40 pts</span></div>
+      <div class="score-row"><span>QF exit (5th–8th)</span><span>+30 pts</span></div>
+      <div class="score-row"><span>R16 exit (9th–16th)</span><span>+15 pts</span></div>
+      <div class="score-row"><span>R32 exit (17th–32nd)</span><span>+5 pts</span></div>
+      <div class="score-row"><span>Group exit (33rd–47th)</span><span>0 pts</span></div>
+      <div class="score-row"><span>Wooden spoon (48th)</span><span>+5 pts</span></div>
+    </div>
+    <div class="scoring-section">
+      <h4>Entertainment Bonus</h4>
+      <div class="score-row"><span>Most combined goals in group stage</span><span>+15 pts</span></div>
+      <div class="score-row" style="color:var(--text-muted);font-size:12px;margin-top:4px;">
+        <span>(goals scored + conceded, 1 team gets this)</span>
+      </div>
+    </div>
+    <div class="scoring-section">
+      <h4>How EV is calculated</h4>
+      <div style="font-size:12px;color:var(--text-muted);max-width:280px;line-height:1.6;">
+        Each team's probability of reaching each stage is derived from
+        Polymarket winner markets. EV = expected Group pts + expected
+        Tournament pts + expected Entertainment bonus (uniform 1/48 pre-tournament).
+        Teams without Polymarket markets use a small uniform prior.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="table-wrap">
+  <div class="table-header">
+    <h2>All 48 Teams</h2>
+    <div class="filter-row" id="filter-row">
+      <button class="filter-btn active" onclick="filterGroup('all', this)">All Groups</button>
+      <button class="filter-btn" onclick="filterGroup('A', this)">A</button>
+      <button class="filter-btn" onclick="filterGroup('B', this)">B</button>
+      <button class="filter-btn" onclick="filterGroup('C', this)">C</button>
+      <button class="filter-btn" onclick="filterGroup('D', this)">D</button>
+      <button class="filter-btn" onclick="filterGroup('E', this)">E</button>
+      <button class="filter-btn" onclick="filterGroup('F', this)">F</button>
+      <button class="filter-btn" onclick="filterGroup('G', this)">G</button>
+      <button class="filter-btn" onclick="filterGroup('H', this)">H</button>
+      <button class="filter-btn" onclick="filterGroup('I', this)">I</button>
+      <button class="filter-btn" onclick="filterGroup('J', this)">J</button>
+      <button class="filter-btn" onclick="filterGroup('K', this)">K</button>
+      <button class="filter-btn" onclick="filterGroup('L', this)">L</button>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table id="main-table">
+      <thead>
+        <tr>
+          <th class="no-sort">#</th>
+          <th class="no-sort">Team</th>
+          <th class="no-sort">Grp</th>
+          <th onclick="sortTable('ev_total')"      title="Total expected points">Total EV</th>
+          <th onclick="sortTable('ev_group')"      title="Expected group stage points" class="col-ev-group">Group EV</th>
+          <th onclick="sortTable('ev_tournament')" title="Expected tournament points" class="col-ev-tournament">Tourn. EV</th>
+          <th onclick="sortTable('ev_entertainment')" title="Expected entertainment bonus" class="col-ev-ent">Ent. EV</th>
+          <th onclick="sortTable('p_win')"         title="P(win the World Cup)">P(Win)</th>
+          <th onclick="sortTable('p_final')"       title="P(reach the final)">P(Final)</th>
+          <th onclick="sortTable('p_advance')"     title="P(advance from group stage)">P(Adv)</th>
+          <th class="no-sort"                      title="Data source quality">Data</th>
+          <th class="no-sort"></th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <tr>
+          <td colspan="12">
+            <div class="state-msg">
+              <div class="icon">⏳</div>
+              Loading team data…
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <p>
+    Probabilities from <a href="https://polymarket.com" target="_blank" rel="noopener">Polymarket</a> ·
+    Expected values based on custom scoring rules ·
+    Updates nightly via GitHub Actions ·
+    <a href="https://github.com/countrysidefarmer/world-cup-2026-betting" target="_blank" rel="noopener">GitHub</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
