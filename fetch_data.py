@@ -35,7 +35,7 @@ TOURNAMENT_PTS = {
 
 ENTERTAINMENT_BONUS = 15
 N_TEAMS = 48
-VOLUME_MIN = 1000  # USD — skip thin markets
+VOLUME_MIN = 50  # USD — exclude zero-volume automated quotes only
 
 # ── All 48 WC 2026 teams ──────────────────────────────────────────────────────
 
@@ -288,6 +288,19 @@ def fetch_sf_probs() -> Dict[str, float]:
     return _fetch_stage("world-cup-nation-to-reach-semifinals", "SF")
 
 
+# ── Geometric conditional advance model ──────────────────────────────────────
+
+def _geo_cond(p_win: float, p_at_stage: float, n_remaining: int) -> float:
+    """
+    P(advance to next stage | at this stage) under constant match-win-prob model.
+    q = (p_win / p_at_stage)^(1/n_remaining), where n_remaining = matches left to win WC.
+    Stronger teams get q > 0.5; weaker teams get q < 0.5.
+    """
+    if p_at_stage <= 0 or p_win <= 0 or p_win >= p_at_stage:
+        return 0.5
+    return (p_win / p_at_stage) ** (1.0 / n_remaining)
+
+
 # ── Harville model ────────────────────────────────────────────────────────────
 
 def harville_group_finish(
@@ -357,11 +370,11 @@ def derive_probs(
         p_grp_4th  = max(0.0, 1.0 - p_advance) * (12.0 / 16.0)
 
     # ── Knockout stage ────────────────────────────────────────────────────────
-    # Fallbacks use the next known stage × 0.5 so they never exceed it,
-    # avoiding the monotonicity clamp making adjacent stages identical.
-    p_r16   = p_r16_direct if p_r16_direct is not None else min(p_advance * 0.5, 0.95)
-    p_qf    = p_qf_direct  if p_qf_direct  is not None else p_r16 * 0.5
-    p_sf    = p_sf_direct  if p_sf_direct  is not None else p_qf  * 0.5
+    # Direct market prices used where available; geometric fallback otherwise.
+    # n_remaining = matches still needed to win WC from each stage.
+    p_r16 = p_r16_direct if p_r16_direct is not None else p_advance * _geo_cond(p_win, p_advance, 5)
+    p_qf  = p_qf_direct  if p_qf_direct  is not None else p_r16    * _geo_cond(p_win, p_r16,    4)
+    p_sf  = p_sf_direct  if p_sf_direct  is not None else p_qf     * _geo_cond(p_win, p_qf,     3)
     p_final = min(p_win * 2.0, 0.82)
 
     # ── Monotonicity (top-down) ───────────────────────────────────────────────
