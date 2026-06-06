@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-06T11:00:28Z",
+  "last_updated": "2026-06-06T11:01:59Z",
   "tournament_state": "pre_tournament",
   "polymarket_teams": 48,
   "teams": [
@@ -514,6 +514,40 @@
       }
     },
     {
+      "name": "Japan",
+      "key": "Japan",
+      "flag": "🇯🇵",
+      "group": "F",
+      "data_quality": "full",
+      "ev_total": 24.03,
+      "ev_group": 9.23,
+      "ev_tournament": 14.49,
+      "ev_entertainment": 0.31,
+      "probs": {
+        "p_win": 0.0215,
+        "p_final": 0.043,
+        "p_sf": 0.1,
+        "p_qf": 0.215,
+        "p_r16": 0.405,
+        "p_advance": 0.8007,
+        "p_win_group": 0.258
+      },
+      "breakdown": {
+        "p_1st": 0.0215,
+        "p_2nd": 0.0215,
+        "p_3rd": 0.0285,
+        "p_4th": 0.0285,
+        "p_qf_exit": 0.115,
+        "p_r16_exit": 0.19,
+        "p_r32_exit": 0.3957,
+        "p_group_exit": 0.1993,
+        "p_grp_1st": 0.258,
+        "p_grp_2nd": 0.3542,
+        "p_grp_3rd": 0.2827,
+        "p_grp_4th": 0.1051
+      }
+    },
+    {
       "name": "Türkiye",
       "key": "Turkiye",
       "flag": "🇹🇷",
@@ -545,40 +579,6 @@
         "p_grp_2nd": 0.326,
         "p_grp_3rd": 0.2272,
         "p_grp_4th": 0.0907
-      }
-    },
-    {
-      "name": "Japan",
-      "key": "Japan",
-      "flag": "🇯🇵",
-      "group": "F",
-      "data_quality": "full",
-      "ev_total": 23.94,
-      "ev_group": 9.23,
-      "ev_tournament": 14.4,
-      "ev_entertainment": 0.31,
-      "probs": {
-        "p_win": 0.0215,
-        "p_final": 0.043,
-        "p_sf": 0.095,
-        "p_qf": 0.215,
-        "p_r16": 0.405,
-        "p_advance": 0.8007,
-        "p_win_group": 0.258
-      },
-      "breakdown": {
-        "p_1st": 0.0215,
-        "p_2nd": 0.0215,
-        "p_3rd": 0.026,
-        "p_4th": 0.026,
-        "p_qf_exit": 0.12,
-        "p_r16_exit": 0.19,
-        "p_r32_exit": 0.3957,
-        "p_group_exit": 0.1993,
-        "p_grp_1st": 0.258,
-        "p_grp_2nd": 0.3542,
-        "p_grp_3rd": 0.2827,
-        "p_grp_4th": 0.1051
       }
     },
     {
