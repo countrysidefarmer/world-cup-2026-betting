@@ -6,6 +6,7 @@ Writes data/teams.json consumed by index.html.
 """
 
 import json
+import math
 import re
 import sys
 import time
@@ -288,6 +289,41 @@ def fetch_sf_probs() -> Dict[str, float]:
     return _fetch_stage("world-cup-nation-to-reach-semifinals", "SF")
 
 
+# ── Entertainment bonus weights ───────────────────────────────────────────────
+
+def compute_entertainment_weights(
+    win_probs: Dict[str, float],
+    groups: Dict[str, List[str]],
+    mu_base: float = 2.8,
+    kappa: float = 0.2,
+) -> Dict[str, float]:
+    """
+    P(entertainment bonus) per team, based on expected total goals across 3 group games.
+    Mismatched games (large log-strength difference) produce more extreme scorelines,
+    so teams at either extreme (dominant or minnow) in lopsided groups score higher.
+
+    λ_game = mu_base × (1 + kappa × |log(s_i / s_j)|)
+    weight_i = sum over 3 opponents of λ_game
+    Returns weights normalised to sum to 1 across all 48 teams.
+    """
+    weights: Dict[str, float] = {}
+    for g, team_keys in groups.items():
+        strengths = {k: max(win_probs.get(k, 0.001), 0.001) for k in team_keys}
+        for i_key in team_keys:
+            s_i = strengths[i_key]
+            total = 0.0
+            for j_key in team_keys:
+                if j_key == i_key:
+                    continue
+                mismatch = abs(math.log(s_i / strengths[j_key]))
+                total += mu_base * (1.0 + kappa * mismatch)
+            weights[i_key] = total
+    total_w = sum(weights.values())
+    if total_w <= 0:
+        return {k: 1.0 / N_TEAMS for k in weights}
+    return {k: v / total_w for k, v in weights.items()}
+
+
 # ── Geometric conditional advance model ──────────────────────────────────────
 
 def _geo_cond(p_win: float, p_at_stage: float, n_remaining: int) -> float:
@@ -422,7 +458,7 @@ def derive_probs(
 
 # ── EV calculation ────────────────────────────────────────────────────────────
 
-def calculate_ev(p: Dict[str, float]) -> Dict[str, float]:
+def calculate_ev(p: Dict[str, float], ent_weight: float) -> Dict[str, float]:
     ev_group = (
         p["p_grp_1st"] * GROUP_PTS[1]
         + p["p_grp_2nd"] * GROUP_PTS[2]
@@ -442,7 +478,7 @@ def calculate_ev(p: Dict[str, float]) -> Dict[str, float]:
         + p["p_wooden_spoon"] * TOURNAMENT_PTS["wooden_spoon"]
     )
 
-    ev_entertainment = (1.0 / N_TEAMS) * ENTERTAINMENT_BONUS
+    ev_entertainment = ent_weight * ENTERTAINMENT_BONUS
     ev_total = ev_group + ev_tournament + ev_entertainment
 
     return {
@@ -489,6 +525,8 @@ def main() -> None:
     remaining   = max(0.0, 1.0 - known_total)
     prior_p_win = (remaining / n_unknown) if n_unknown > 0 else 0.001
 
+    ent_weights = compute_entertainment_weights(win_probs, GROUPS)
+
     results = []
     for key, (name, flag, group) in TEAMS.items():
         has_winner = key in win_probs
@@ -513,7 +551,7 @@ def main() -> None:
             p_qf_direct=qf_probs.get(key),
             p_sf_direct=sf_probs.get(key),
         )
-        ev = calculate_ev(probs)
+        ev = calculate_ev(probs, ent_weights.get(key, 1.0 / N_TEAMS))
 
         results.append({
             "name":         name,

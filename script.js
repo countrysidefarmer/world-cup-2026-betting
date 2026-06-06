@@ -203,6 +203,7 @@ function buildDetailRow(team) {
         <h5>Group Stage Probabilities</h5>
         <div class="detail-row-item"><span>Win group (1st)</span><span>${fmt_pct(p.p_win_group)}</span></div>
         <div class="detail-row-item"><span>Finish 2nd</span><span>${fmt_pct(b.p_grp_2nd)}</span></div>
+        <div class="detail-row-item"><span>Finish 3rd</span><span>${fmt_pct(b.p_grp_3rd)}</span></div>
         <div class="detail-row-item"><span>Finish 4th</span><span>${fmt_pct(b.p_grp_4th)}</span></div>
         <div class="detail-row-item"><span>Advance from groups</span><span>${fmt_pct(p.p_advance)}</span></div>
       </div>
