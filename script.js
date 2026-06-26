@@ -1,6 +1,7 @@
 'use strict';
 
 let _data = null;
+let _opps = null;
 let _sortCol = 'ev_total';
 let _sortAsc = false;
 let _groupFilter = 'all';
@@ -20,10 +21,22 @@ fetch('./data/teams.json?v=' + Date.now())
     renderCards(d);
     renderTable();
     updateNavTimestamp(d.last_updated);
+    if (_opps) renderTrades();
   })
   .catch(err => {
     console.error(err);
     showMsg('⚠️', 'Could not load team data. Please try again later.');
+  });
+
+fetch('./data/tychemkt_opps.json?v=' + Date.now())
+  .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+  .then(d => {
+    _opps = d;
+    if (_data) renderTrades();
+  })
+  .catch(() => {
+    const s = document.getElementById('trades-wrap');
+    if (s) s.style.display = 'none';
   });
 
 // ── Helpers ────────────────────────────────────────────────────────────────
@@ -259,6 +272,62 @@ function toggleDetail(key) {
       parentRow.insertAdjacentHTML('afterend', buildDetailRow(team));
     }
   }
+}
+
+// ── Trades ─────────────────────────────────────────────────────────────────
+
+function renderTrades() {
+  if (!_data || !_opps) return;
+
+  const mids    = _opps.mids || {};
+  const fairMap = {};
+  const teamMap = {};
+  _data.teams.forEach(t => { fairMap[t.key] = t.ev_total; teamMap[t.key] = t; });
+
+  const rows = [];
+  for (const [key, mid] of Object.entries(mids)) {
+    const fv = fairMap[key];
+    if (fv == null) continue;
+    rows.push({ key, fv, mid, edge: fv - mid, team: teamMap[key] });
+  }
+
+  const buys  = rows.filter(r => r.edge >  0.4).sort((a, b) => b.edge - a.edge).slice(0, 8);
+  const sells = rows.filter(r => r.edge < -0.4).sort((a, b) => a.edge - b.edge).slice(0, 8);
+
+  renderTradeCol('trades-buy',  buys,  'buy');
+  renderTradeCol('trades-sell', sells, 'sell');
+
+  const metaEl = document.getElementById('trades-meta');
+  if (metaEl && _opps.scanned_at) {
+    const d = new Date(_opps.scanned_at);
+    metaEl.textContent = 'Scanned ' + d.toLocaleDateString('en-GB', {
+      day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
+    });
+  } else if (metaEl) {
+    metaEl.textContent = '';
+  }
+}
+
+function renderTradeCol(id, rows, side) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (rows.length === 0) {
+    el.innerHTML = '<div class="trades-empty">No clear opportunities</div>';
+    return;
+  }
+  el.innerHTML = rows.map((r, i) => {
+    const t        = r.team;
+    const flag     = t ? esc(t.flag) : '';
+    const name     = t ? esc(t.name) : esc(r.key);
+    const edgeStr  = (r.edge > 0 ? '+' : '') + r.edge.toFixed(1);
+    return `
+<div class="trade-row">
+  <div class="trade-rank">${i + 1}</div>
+  <div class="trade-team"><span class="flag">${flag}</span><span class="name">${name}</span></div>
+  <div class="trade-prices">Fair ${r.fv.toFixed(1)} · Mkt ${r.mid.toFixed(1)}</div>
+  <div class="trade-edge ${side}">${edgeStr}</div>
+</div>`;
+  }).join('');
 }
 
 // ── Scoring panel ──────────────────────────────────────────────────────────
