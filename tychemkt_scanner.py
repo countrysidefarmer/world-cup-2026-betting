@@ -392,9 +392,13 @@ def scan(
             else:
                 mid_map[team_key] = float(best_ask_p)  # type: ignore[arg-type]
 
+            # Skip eliminated teams — their finish value is settled, no live market interest
+            if t.get("probs", {}).get("p_advance", 0) == 0:
+                continue
+
             ev, action, order_price = _best_action(theo, bids, asks)
 
-            if ev <= 1.0:
+            if ev <= 0.5:
                 continue
 
             best_bid_q = bids[0][1] if bids else None
@@ -1195,12 +1199,13 @@ def main() -> None:
 
     print_combined_report(opps, team_map, elo_map, book_map, combined_pos, open_orders)
 
-    # Basket: compare total model EV vs total TycheMkt mid across all team contracts
-    sum_theo = sum(t.get("ev_total", 0) for t in team_map.values())
-    sum_mid  = sum(v for v in mid_map.values() if v is not None)
-    n_mid    = sum(1 for v in mid_map.values() if v is not None)
-    gap      = sum_theo - sum_mid
-    print(f"\n  Basket: model Σ={sum_theo:.1f}  mkt Σ={sum_mid:.1f} ({n_mid}/{len(team_map)} teams with book)  gap={gap:+.1f}")
+    # Basket: compare model EV vs TycheMkt mid — advancing teams only
+    advancing = {k: t for k, t in team_map.items() if t.get("probs", {}).get("p_advance", 0) > 0}
+    sum_theo  = sum(t.get("ev_total", 0) for t in advancing.values())
+    sum_mid   = sum(mid_map[k] for k in advancing if mid_map.get(k) is not None)
+    n_mid     = sum(1 for k in advancing if mid_map.get(k) is not None)
+    gap       = sum_theo - sum_mid
+    print(f"\n  Basket ({len(advancing)} advancing teams): model Σ={sum_theo:.1f}  mkt Σ={sum_mid:.1f} ({n_mid}/{len(advancing)} with book)  gap={gap:+.1f}")
 
     print("\nPricing multiplier markets...")
     mult_results = scan_multipliers(client, team_map, mult_contracts)
