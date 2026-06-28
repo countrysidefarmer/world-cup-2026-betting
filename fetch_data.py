@@ -946,6 +946,17 @@ def _poisson_sample(lam: float) -> int:
     return k - 1
 
 
+def _is_group_stage_complete(
+    played_pairs: Dict[str, List[Tuple[str, str]]],
+    groups: Dict[str, List[str]],
+) -> bool:
+    for g, teams in groups.items():
+        n_expected = len(teams) * (len(teams) - 1) // 2  # C(4,2) = 6
+        if len(played_pairs.get(g, [])) < n_expected:
+            return False
+    return True
+
+
 def compute_entertainment_win_probs(
     win_probs: Dict[str, float],
     groups: Dict[str, List[str]],
@@ -967,6 +978,16 @@ def compute_entertainment_win_probs(
     """
     results  = group_results or {}
     pp       = played_pairs  or {}
+
+    # Group stage complete — winner is deterministic, no simulation needed.
+    if _is_group_stage_complete(pp, groups):
+        combined = {k: int(results.get(k, {}).get("gf", 0)) + int(results.get(k, {}).get("ga", 0))
+                    for keys in groups.values() for k in keys}
+        gf_map   = {k: int(results.get(k, {}).get("gf", 0)) for keys in groups.values() for k in keys}
+        gd_map   = {k: int(results.get(k, {}).get("gd", 0)) for keys in groups.values() for k in keys}
+        winner   = max(combined, key=lambda k: (combined[k], gf_map[k], gd_map[k], -FIFA_RANKING.get(k, 80)))
+        print(f"[INFO] Entertainment bonus settled: {winner} wins (combined={combined[winner]})", file=sys.stderr)
+        return {k: (1.0 if k == winner else 0.0) for k in combined}
 
     # Locked-in combined goals, goals-scored, and GD (for tiebreakers) from actual results
     actual_combined: Dict[str, int] = {}
@@ -1530,6 +1551,16 @@ def compute_wooden_spoon_probs(
     Pre-tournament or no data: badness = 1 (uniform, reduces to p_grp_4th/12 after norm).
     Normalised so weights sum to 1 (exactly one team gets the wooden spoon).
     """
+    # Group stage complete — wooden spoon is deterministic.
+    fourth_place = [k for k in team_keys if all_probs.get(k, {}).get("p_grp_4th", 0.0) > 0.99]
+    if len(fourth_place) == 12:
+        def _ws_badness(k: str) -> tuple:
+            r = group_results.get(k, {})
+            return (r.get("pts", 0), r.get("gf", 0), r.get("gd", 0), -FIFA_RANKING.get(k, 80))
+        wooden_spoon = min(fourth_place, key=_ws_badness)
+        print(f"[INFO] Wooden spoon settled: {wooden_spoon} {_ws_badness(wooden_spoon)}", file=sys.stderr)
+        return {k: (1.0 if k == wooden_spoon else 0.0) for k in team_keys}
+
     raw: Dict[str, float] = {}
 
     for k in team_keys:
