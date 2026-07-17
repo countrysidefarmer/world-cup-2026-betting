@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-16T04:57:55Z",
+  "last_updated": "2026-07-17T05:12:00Z",
   "tournament_state": "knockout",
   "polymarket_teams": 2,
   "teams": [
@@ -9,12 +9,12 @@
       "flag": "🇪🇸",
       "group": "H",
       "data_quality": "full",
-      "ev_total": 101.65,
+      "ev_total": 101.74,
       "ev_group": 20.0,
-      "ev_tournament": 81.65,
+      "ev_tournament": 81.74,
       "ev_entertainment": 0.0,
       "probs": {
-        "p_win": 0.5824,
+        "p_win": 0.587,
         "p_final": 1.0,
         "p_sf": 1.0,
         "p_qf": 1.0,
@@ -23,8 +23,8 @@
         "p_win_group": 1.0
       },
       "breakdown": {
-        "p_1st": 0.5824,
-        "p_2nd": 0.4176,
+        "p_1st": 0.587,
+        "p_2nd": 0.413,
         "p_3rd": 0.0,
         "p_4th": 0.0,
         "p_qf_exit": 0.0,
@@ -44,12 +44,12 @@
       "flag": "🇦🇷",
       "group": "J",
       "data_quality": "full",
-      "ev_total": 98.35,
+      "ev_total": 98.26,
       "ev_group": 20.0,
-      "ev_tournament": 78.35,
+      "ev_tournament": 78.26,
       "ev_entertainment": 0.0,
       "probs": {
-        "p_win": 0.4176,
+        "p_win": 0.413,
         "p_final": 1.0,
         "p_sf": 1.0,
         "p_qf": 1.0,
@@ -58,8 +58,8 @@
         "p_win_group": 1.0
       },
       "breakdown": {
-        "p_1st": 0.4176,
-        "p_2nd": 0.5824,
+        "p_1st": 0.413,
+        "p_2nd": 0.587,
         "p_3rd": 0.0,
         "p_4th": 0.0,
         "p_qf_exit": 0.0,
