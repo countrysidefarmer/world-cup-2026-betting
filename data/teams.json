@@ -1,20 +1,20 @@
 {
-  "last_updated": "2026-07-19T05:19:31Z",
+  "last_updated": "2026-07-20T05:37:25Z",
   "tournament_state": "knockout",
-  "polymarket_teams": 2,
+  "polymarket_teams": 0,
   "teams": [
     {
       "name": "Spain",
       "key": "Spain",
       "flag": "🇪🇸",
       "group": "H",
-      "data_quality": "full",
-      "ev_total": 101.81,
+      "data_quality": "winner_only",
+      "ev_total": 90.42,
       "ev_group": 20.0,
-      "ev_tournament": 81.81,
+      "ev_tournament": 70.42,
       "ev_entertainment": 0.0,
       "probs": {
-        "p_win": 0.5905,
+        "p_win": 0.0208,
         "p_final": 1.0,
         "p_sf": 1.0,
         "p_qf": 1.0,
@@ -23,8 +23,8 @@
         "p_win_group": 1.0
       },
       "breakdown": {
-        "p_1st": 0.5905,
-        "p_2nd": 0.4095,
+        "p_1st": 0.0208,
+        "p_2nd": 0.9792,
         "p_3rd": 0.0,
         "p_4th": 0.0,
         "p_qf_exit": 0.0,
@@ -43,13 +43,13 @@
       "key": "Argentina",
       "flag": "🇦🇷",
       "group": "J",
-      "data_quality": "full",
-      "ev_total": 98.19,
+      "data_quality": "winner_only",
+      "ev_total": 90.42,
       "ev_group": 20.0,
-      "ev_tournament": 78.19,
+      "ev_tournament": 70.42,
       "ev_entertainment": 0.0,
       "probs": {
-        "p_win": 0.4095,
+        "p_win": 0.0208,
         "p_final": 1.0,
         "p_sf": 1.0,
         "p_qf": 1.0,
@@ -58,8 +58,8 @@
         "p_win_group": 1.0
       },
       "breakdown": {
-        "p_1st": 0.4095,
-        "p_2nd": 0.5905,
+        "p_1st": 0.0208,
+        "p_2nd": 0.9792,
         "p_3rd": 0.0,
         "p_4th": 0.0,
         "p_qf_exit": 0.0,
