@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-06-19T17:20Z",
+  "xgb_ts": "2026-06-19T16:23Z",
+  "poly_ts": "2026-06-19 17:10Z",
+  "mlflow_run_id": "5b78732f5fcd4dfabcd1dc72bcdc3fe7",
+  "rows": [
+    {
+      "team": "Scotland",
+      "poly_ev": 11.9,
+      "xgb_ev": 17.3,
+      "best_bid": 2.0,
+      "best_ask": 13.0,
+      "poly_edge": 4.4,
+      "xgb_edge": 9.8
+    },
+    {
+      "team": "South Africa",
+      "poly_ev": 8.4,
+      "xgb_ev": 6.6,
+      "best_bid": 5.0,
+      "best_ask": 7.0,
+      "poly_edge": 2.4,
+      "xgb_edge": 0.6
+    },
+    {
+      "team": "Czechia",
+      "poly_ev": 7.4,
+      "xgb_ev": 4.8,
+      "best_bid": 5.0,
+      "best_ask": 6.0,
+      "poly_edge": 1.9,
+      "xgb_edge": -0.7
+    },
+    {
+      "team": "New Zealand",
+      "poly_ev": 8.2,
+      "xgb_ev": 8.1,
+      "best_bid": 7.0,
+      "best_ask": 8.0,
+      "poly_edge": 0.8,
+      "xgb_edge": 0.6
+    },
+    {
+      "team": "Belgium",
+      "poly_ev": 34.1,
+      "xgb_ev": 34.9,
+      "best_bid": 33.0,
+      "best_ask": 35.0,
+      "poly_edge": 0.1,
+      "xgb_edge": 0.9
+    },
+    {
+      "team": "Morocco",
+      "poly_ev": 28.3,
+      "xgb_ev": 20.5,
+      "best_bid": 29.0,
+      "best_ask": 30.0,
+      "poly_edge": -1.2,
+      "xgb_edge": -9.0
+    },
+    {
+      "team": "Brazil",
+      "poly_ev": 40.7,
+      "xgb_ev": 42.6,
+      "best_bid": 41.0,
+      "best_ask": 43.0,
+      "poly_edge": -1.3,
+      "xgb_edge": 0.6
+    },
+    {
+      "team": "Argentina",
+      "poly_ev": 50.7,
+      "xgb_ev": 55.7,
+      "best_bid": 51.0,
+      "best_ask": 53.0,
+      "poly_edge": -1.3,
+      "xgb_edge": 3.7
+    },
+    {
+      "team": "Portugal",
+      "poly_ev": 40.5,
+      "xgb_ev": 28.1,
+      "best_bid": 41.0,
+      "best_ask": 43.0,
+      "poly_edge": -1.5,
+      "xgb_edge": -13.9
+    },
+    {
+      "team": "Haiti",
+      "poly_ev": 6.0,
+      "xgb_ev": 5.9,
+      "best_bid": 7.0,
+      "best_ask": 8.0,
+      "poly_edge": -1.5,
+      "xgb_edge": -1.6
+    },
+    {
+      "team": "Mexico",
+      "poly_ev": 35.8,
+      "xgb_ev": 40.8,
+      "best_bid": 36.0,
+      "best_ask": 39.0,
+      "poly_edge": -1.7,
+      "xgb_edge": 3.3
+    },
+    {
+      "team": "Sweden",
+      "poly_ev": 19.6,
+      "xgb_ev": 16.2,
+      "best_bid": 21.0,
+      "best_ask": 22.0,
+      "poly_edge": -1.9,
+      "xgb_edge": -5.3
+    },
+    {
+      "team": "Colombia",
+      "poly_ev": 31.4,
+      "xgb_ev": 48.1,
+      "best_bid": 32.0,
+      "best_ask": 35.0,
+      "poly_edge": -2.1,
+      "xgb_edge": 14.6
+    },
+    {
+      "team": "Spain",
+      "poly_ev": 49.8,
+      "xgb_ev": 45.3,
+      "best_bid": 51.0,
+      "best_ask": 53.0,
+      "poly_edge": -2.2,
+      "xgb_edge": -6.7
+    },
+    {
+      "team": "Switzerland",
+      "poly_ev": 30.2,
+      "xgb_ev": 30.8,
+      "best_bid": 32.0,
+      "best_ask": 33.0,
+      "poly_edge": -2.3,
+      "xgb_edge": -1.7
+    },
+    {
+      "team": "Australia",
+      "poly_ev": 19.0,
+      "xgb_ev": 31.7,
+      "best_bid": 21.0,
+      "best_ask": 22.0,
+      "poly_edge": -2.5,
+      "xgb_edge": 10.2
+    },
+    {
+      "team": "Netherlands",
+      "poly_ev": 32.6,
+      "xgb_ev": 29.9,
+      "best_bid": 35.0,
+      "best_ask": 37.0,
+      "poly_edge": -3.4,
+      "xgb_edge": -6.1
+    },
+    {
+      "team": "France",
+      "poly_ev": 55.2,
+      "xgb_ev": 52.4,
+      "best_bid": 60.0,
+      "best_ask": 61.0,
+      "poly_edge": -5.3,
+      "xgb_edge": -8.1
+    },
+    {
+      "team": "Germany",
+      "poly_ev": 41.8,
+      "xgb_ev": 38.9,
+      "best_bid": 47.0,
+      "best_ask": 48.0,
+      "poly_edge": -5.7,
+      "xgb_edge": -8.6
+    },
+    {
+      "team": "England",
+      "poly_ev": 53.2,
+      "xgb_ev": 49.6,
+      "best_bid": 60.0,
+      "best_ask": 61.0,
+      "poly_edge": -7.3,
+      "xgb_edge": -10.9
+    }
+  ]
+}

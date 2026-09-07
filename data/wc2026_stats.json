@@ -1,0 +1,1528 @@
+{
+  "last_updated": "2026-07-19T17:48:49.645302+00:00",
+  "total_matches": 95,
+  "total_yellows": 242,
+  "total_reds": 13,
+  "per_match": {
+    "760416": {
+      "yellows": 5,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Canada",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Bosnia-Herzegovina",
+          "yellows": 3,
+          "reds": 0
+        }
+      ]
+    },
+    "760417": {
+      "yellows": 6,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "United States",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Paraguay",
+          "yellows": 5,
+          "reds": 0
+        }
+      ]
+    },
+    "760420": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Qatar",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Switzerland",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760419": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Brazil",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Morocco",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760418": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Haiti",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Scotland",
+          "yellows": 3,
+          "reds": 0
+        }
+      ]
+    },
+    "760421": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Australia",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "T\u00fcrkiye",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760422": {
+      "yellows": 0,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Germany",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Cura\u00e7ao",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760425": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Netherlands",
+          "yellows": 3,
+          "reds": 0
+        },
+        {
+          "team": "Japan",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760423": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Ivory Coast",
+          "yellows": 3,
+          "reds": 0
+        },
+        {
+          "team": "Ecuador",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760424": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Sweden",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Tunisia",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760428": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Spain",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Cape Verde",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760426": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Belgium",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Egypt",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760429": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Saudi Arabia",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Uruguay",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760427": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Iran",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "New Zealand",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760432": {
+      "yellows": 0,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "France",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Senegal",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760430": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Iraq",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Norway",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760433": {
+      "yellows": 0,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Argentina",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Algeria",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760431": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Austria",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Jordan",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760435": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Portugal",
+          "yellows": 3,
+          "reds": 0
+        },
+        {
+          "team": "Congo DR",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760437": {
+      "yellows": 0,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "England",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Croatia",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760434": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Ghana",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Panama",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760436": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Uzbekistan",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Colombia",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760438": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Czechia",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "South Africa",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760439": {
+      "yellows": 3,
+      "reds": 1,
+      "teams": [
+        {
+          "team": "Switzerland",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Bosnia-Herzegovina",
+          "yellows": 2,
+          "reds": 1
+        }
+      ]
+    },
+    "760440": {
+      "yellows": 2,
+      "reds": 2,
+      "teams": [
+        {
+          "team": "Canada",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Qatar",
+          "yellows": 1,
+          "reds": 2
+        }
+      ]
+    },
+    "760441": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Mexico",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "South Korea",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760442": {
+      "yellows": 7,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "United States",
+          "yellows": 3,
+          "reds": 0
+        },
+        {
+          "team": "Australia",
+          "yellows": 4,
+          "reds": 0
+        }
+      ]
+    },
+    "760445": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Scotland",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Morocco",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760444": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Brazil",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Haiti",
+          "yellows": 3,
+          "reds": 0
+        }
+      ]
+    },
+    "760443": {
+      "yellows": 2,
+      "reds": 1,
+      "teams": [
+        {
+          "team": "T\u00fcrkiye",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Paraguay",
+          "yellows": 1,
+          "reds": 1
+        }
+      ]
+    },
+    "760415": {
+      "yellows": 3,
+      "reds": 3,
+      "teams": [
+        {
+          "team": "Mexico",
+          "yellows": 1,
+          "reds": 1
+        },
+        {
+          "team": "South Africa",
+          "yellows": 2,
+          "reds": 2
+        }
+      ]
+    },
+    "760414": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "South Korea",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Czechia",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760447": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Netherlands",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Sweden",
+          "yellows": 3,
+          "reds": 0
+        }
+      ]
+    },
+    "760448": {
+      "yellows": 0,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Germany",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Ivory Coast",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760446": {
+      "yellows": 6,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Ecuador",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Cura\u00e7ao",
+          "yellows": 5,
+          "reds": 0
+        }
+      ]
+    },
+    "760449": {
+      "yellows": 0,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Tunisia",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Japan",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760453": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Spain",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Saudi Arabia",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760451": {
+      "yellows": 2,
+      "reds": 1,
+      "teams": [
+        {
+          "team": "Belgium",
+          "yellows": 1,
+          "reds": 1
+        },
+        {
+          "team": "Iran",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760450": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Uruguay",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Cape Verde",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760452": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "New Zealand",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Egypt",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760456": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Argentina",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Austria",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760457": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "France",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Iraq",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760454": {
+      "yellows": 0,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Norway",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Senegal",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760455": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Jordan",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Algeria",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760461": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Portugal",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Uzbekistan",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760458": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "England",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Ghana",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760460": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Panama",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Croatia",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760459": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Colombia",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Congo DR",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760462": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Bosnia-Herzegovina",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Qatar",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760463": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Switzerland",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Canada",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760464": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Morocco",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Haiti",
+          "yellows": 3,
+          "reds": 0
+        }
+      ]
+    },
+    "760465": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Scotland",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Brazil",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760467": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Czechia",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Mexico",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760466": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "South Africa",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "South Korea",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760473": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Cura\u00e7ao",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Ivory Coast",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760468": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Ecuador",
+          "yellows": 3,
+          "reds": 0
+        },
+        {
+          "team": "Germany",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760471": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Japan",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Sweden",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760472": {
+      "yellows": 0,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Tunisia",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Netherlands",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760469": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Paraguay",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Australia",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760470": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "T\u00fcrkiye",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "United States",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760475": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Norway",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "France",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760474": {
+      "yellows": 4,
+      "reds": 1,
+      "teams": [
+        {
+          "team": "Senegal",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Iraq",
+          "yellows": 2,
+          "reds": 1
+        }
+      ]
+    },
+    "760478": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Cape Verde",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Saudi Arabia",
+          "yellows": 3,
+          "reds": 0
+        }
+      ]
+    },
+    "760479": {
+      "yellows": 4,
+      "reds": 1,
+      "teams": [
+        {
+          "team": "Uruguay",
+          "yellows": 3,
+          "reds": 1
+        },
+        {
+          "team": "Spain",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760476": {
+      "yellows": 7,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Egypt",
+          "yellows": 3,
+          "reds": 0
+        },
+        {
+          "team": "Iran",
+          "yellows": 4,
+          "reds": 0
+        }
+      ]
+    },
+    "760477": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "New Zealand",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Belgium",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760480": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Croatia",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Ghana",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760485": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Panama",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "England",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760481": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Colombia",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Portugal",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760482": {
+      "yellows": 5,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Congo DR",
+          "yellows": 3,
+          "reds": 0
+        },
+        {
+          "team": "Uzbekistan",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760484": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Algeria",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Austria",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760483": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Jordan",
+          "yellows": 3,
+          "reds": 0
+        },
+        {
+          "team": "Argentina",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760486": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "South Africa",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Canada",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760487": {
+      "yellows": 5,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Brazil",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Japan",
+          "yellows": 3,
+          "reds": 0
+        }
+      ]
+    },
+    "760490": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Ivory Coast",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Norway",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760492": {
+      "yellows": 0,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "France",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Sweden",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760491": {
+      "yellows": 3,
+      "reds": 1,
+      "teams": [
+        {
+          "team": "Mexico",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Ecuador",
+          "yellows": 3,
+          "reds": 1
+        }
+      ]
+    },
+    "760495": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "England",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Congo DR",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760494": {
+      "yellows": 1,
+      "reds": 1,
+      "teams": [
+        {
+          "team": "United States",
+          "yellows": 0,
+          "reds": 1
+        },
+        {
+          "team": "Bosnia-Herzegovina",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760497": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Spain",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Austria",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760496": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Portugal",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Croatia",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760498": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Switzerland",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Algeria",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760501": {
+      "yellows": 5,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Colombia",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Ghana",
+          "yellows": 3,
+          "reds": 0
+        }
+      ]
+    },
+    "760502": {
+      "yellows": 8,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Canada",
+          "yellows": 4,
+          "reds": 0
+        },
+        {
+          "team": "Morocco",
+          "yellows": 4,
+          "reds": 0
+        }
+      ]
+    },
+    "760503": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Paraguay",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "France",
+          "yellows": 3,
+          "reds": 0
+        }
+      ]
+    },
+    "760504": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Brazil",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Norway",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760505": {
+      "yellows": 6,
+      "reds": 1,
+      "teams": [
+        {
+          "team": "Mexico",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "England",
+          "yellows": 4,
+          "reds": 1
+        }
+      ]
+    },
+    "760506": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Portugal",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Spain",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760507": {
+      "yellows": 2,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "United States",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Belgium",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    },
+    "760509": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Argentina",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Egypt",
+          "yellows": 4,
+          "reds": 0
+        }
+      ]
+    },
+    "760510": {
+      "yellows": 1,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "France",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "Morocco",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760511": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "Spain",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Belgium",
+          "yellows": 2,
+          "reds": 0
+        }
+      ]
+    },
+    "760514": {
+      "yellows": 3,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "France",
+          "yellows": 2,
+          "reds": 0
+        },
+        {
+          "team": "Spain",
+          "yellows": 1,
+          "reds": 0
+        }
+      ]
+    },
+    "760515": {
+      "yellows": 4,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "England",
+          "yellows": 1,
+          "reds": 0
+        },
+        {
+          "team": "Argentina",
+          "yellows": 3,
+          "reds": 0
+        }
+      ]
+    },
+    "760516": {
+      "yellows": 0,
+      "reds": 0,
+      "teams": [
+        {
+          "team": "France",
+          "yellows": 0,
+          "reds": 0
+        },
+        {
+          "team": "England",
+          "yellows": 0,
+          "reds": 0
+        }
+      ]
+    }
+  }
+}
