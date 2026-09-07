@@ -339,17 +339,25 @@ def fetch_group_standings() -> Tuple[Dict[str, Dict], Dict[str, List[Tuple[str, 
             away_g = int(competitors[1].get("score", 0))
 
             if home_name and away_name:
-                espn_pairs.append((home_name, away_name))
                 hk = _normalize_name(home_name)
                 ak = _normalize_name(away_name)
                 if hk and ak and hk in TEAMS and ak in TEAMS:
-                    game_scores[(hk, ak)] = (home_g, away_g)
+                    # Only track game scores and pairs for group-stage matches
+                    if TEAMS[hk][2] == TEAMS[ak][2]:
+                        espn_pairs.append((home_name, away_name))
+                        game_scores[(hk, ak)] = (home_g, away_g)
 
             for team_name, gf, ga in [
                 (home_name, home_g, away_g),
                 (away_name, away_g, home_g),
             ]:
                 if not team_name:
+                    continue
+                tk = _normalize_name(team_name)
+                opp = home_name if team_name == away_name else away_name
+                ok = _normalize_name(opp)
+                # Skip knockout-stage matches (opponents from different groups)
+                if tk and ok and tk in TEAMS and ok in TEAMS and TEAMS[tk][2] != TEAMS[ok][2]:
                     continue
                 if team_name not in raw_stats:
                     raw_stats[team_name] = {"played": 0, "gf": 0, "ga": 0, "pts": 0}
@@ -1481,6 +1489,7 @@ def derive_probs(
     # ── Monotonicity (top-down) ───────────────────────────────────────────────
     # If R16 market exceeds Harville advance, trust the more liquid R16 market
     p_advance = max(p_advance, p_r16)
+    p_advance = min(p_advance, 1.0)   # Polymarket normalization can push >1 for certain qualifiers
     p_r16   = min(p_r16,   p_advance)
     p_qf    = min(p_qf,    p_r16)
     p_sf    = min(p_sf,    p_qf)
@@ -1710,7 +1719,7 @@ def detect_state() -> str:
     now = datetime.now(timezone.utc)
     if now < datetime(2026, 6, 11, tzinfo=timezone.utc):
         return "pre_tournament"
-    if now < datetime(2026, 7, 2, tzinfo=timezone.utc):
+    if now < datetime(2026, 6, 28, tzinfo=timezone.utc):
         return "group_stage"
     return "knockout"
 

@@ -103,7 +103,7 @@ class TycheMktClient:
 
     def list_contracts(self, event_id: str) -> List[Dict]:
         return self._list_all("QueryService", "ListContracts", "contracts",
-                              {"eventId": event_id})
+                              {"eventId": event_id, "page": {"pageSize": 500}})
 
     def get_order_book(self, contract_id: str) -> Dict:
         return self._post("QueryService", "GetOrderBook", {"contractId": contract_id})
@@ -230,15 +230,15 @@ _ALIASES: Dict[str, str] = {
     "drc":                          "DR Congo",
     "czech republic":               "Czechia",
     "czechia":                      "Czechia",
-    "turkey":                       "Türkiye",
-    "türkiye":                      "Türkiye",
+    "turkey":                       "Turkiye",
+    "türkiye":                      "Turkiye",
     "cape verde islands":           "Cape Verde",
     "cape verde":                   "Cape Verde",
-    "bosnia and herzegovina":       "Bosnia & Herzegovina",
-    "bosnia & herzegovina":         "Bosnia & Herzegovina",
-    "bosnia":                       "Bosnia & Herzegovina",
-    "curacao":                      "Curaçao",
-    "curaçao":                      "Curaçao",
+    "bosnia and herzegovina":       "Bosnia and Herzegovina",
+    "bosnia & herzegovina":         "Bosnia and Herzegovina",
+    "bosnia":                       "Bosnia and Herzegovina",
+    "curacao":                      "Curacao",
+    "curaçao":                      "Curacao",
     "south africa":                 "South Africa",
     "saudi arabia":                 "Saudi Arabia",
     "new zealand":                  "New Zealand",
@@ -283,6 +283,26 @@ def _classify(contract: Dict) -> str:
         return "finish_value"
 
     return "unknown"
+
+
+def _is_still_in(t: Dict) -> bool:
+    """True if team has not yet been definitively eliminated from the tournament."""
+    if t.get("probs", {}).get("p_advance", 0) == 0:
+        return False
+    bd = t.get("breakdown", {})
+    # Any exit round settled at certainty means the team is knocked out
+    if bd.get("p_group_exit", 0) >= 1.0:
+        return False
+    if bd.get("p_r32_exit", 0) >= 1.0:
+        return False
+    if bd.get("p_r16_exit", 0) >= 1.0:
+        return False
+    if bd.get("p_qf_exit", 0) >= 1.0:
+        return False
+    # SF exit: p_3rd + p_4th = 1.0 means lost in SF (3rd-place playoff played)
+    if bd.get("p_3rd", 0) + bd.get("p_4th", 0) >= 1.0:
+        return False
+    return True
 
 # ── Theos loading ─────────────────────────────────────────────────────────────
 
@@ -393,7 +413,7 @@ def scan(
                 mid_map[team_key] = float(best_ask_p)  # type: ignore[arg-type]
 
             # Skip eliminated teams — their finish value is settled, no live market interest
-            if t.get("probs", {}).get("p_advance", 0) == 0:
+            if not _is_still_in(t):
                 continue
 
             ev, action, order_price = _best_action(theo, bids, asks)
@@ -1199,13 +1219,40 @@ def main() -> None:
 
     print_combined_report(opps, team_map, elo_map, book_map, combined_pos, open_orders)
 
-    # Basket: compare model EV vs TycheMkt mid — advancing teams only
-    advancing = {k: t for k, t in team_map.items() if t.get("probs", {}).get("p_advance", 0) > 0}
-    sum_theo  = sum(t.get("ev_total", 0) for t in advancing.values())
-    sum_mid   = sum(mid_map[k] for k in advancing if mid_map.get(k) is not None)
-    n_mid     = sum(1 for k in advancing if mid_map.get(k) is not None)
-    gap       = sum_theo - sum_mid
-    print(f"\n  Basket ({len(advancing)} advancing teams): model Σ={sum_theo:.1f}  mkt Σ={sum_mid:.1f} ({n_mid}/{len(advancing)} with book)  gap={gap:+.1f}")
+    # Basket + full team table — still-in teams only
+    still_in = {k: t for k, t in team_map.items() if _is_still_in(t)}
+    n_in     = len(still_in)
+    covered  = {k: t for k, t in still_in.items() if mid_map.get(k) is not None}
+    n_cov    = len(covered)
+    sum_theo_all = sum(t.get("ev_total", 0) for t in still_in.values())
+    sum_theo_cov = sum(t.get("ev_total", 0) for t in covered.values())
+    sum_mid      = sum(mid_map[k] for k in covered)
+    gap          = sum_theo_cov - sum_mid
+
+    # Full team table sorted by absolute edge descending
+    def _abs_edge(k: str) -> float:
+        mid = mid_map.get(k)
+        if mid is None:
+            return 0.0
+        return abs(still_in[k].get("ev_total", 0) - mid)
+
+    print(f"\n{'─'*68}")
+    print(f"  {'Team':<22}  {'Theo':>6}  {'Mid':>6}  {'Edge':>6}  {'Pos':>5}")
+    print(f"  {'─'*62}")
+    for k in sorted(still_in, key=_abs_edge, reverse=True):
+        t    = still_in[k]
+        theo = t.get("ev_total", 0)
+        mid  = mid_map.get(k)
+        pos  = combined_pos.get(k, 0)
+        mid_s  = f"{mid:>6.1f}" if mid is not None else "     —"
+        edge_s = f"{theo - mid:>+6.1f}" if mid is not None else "     —"
+        pos_s  = f"{pos:>+5d}" if pos else "     —"
+        print(f"  {k:<22}  {theo:>6.1f}  {mid_s}  {edge_s}  {pos_s}")
+    print(f"  {'─'*62}")
+    print(f"  {'TOTAL':<22}  {sum_theo_all:>6.1f}  {sum_mid:>6.1f}  {gap:>+6.1f}")
+    if n_cov < n_in:
+        missing = sorted(k for k in still_in if mid_map.get(k) is None)
+        print(f"  No book: {', '.join(missing)}")
 
     print("\nPricing multiplier markets...")
     mult_results = scan_multipliers(client, team_map, mult_contracts)
